@@ -1,0 +1,12 @@
+apple;jablko
+window;okno
+church;kosciol
+strawberry;truskawka
+cherry;wisnia
+bubble;babelek
+table;stol
+garden;ogrod
+smoke;palic
+door;drzwi
+car;auto
+joke;zart
