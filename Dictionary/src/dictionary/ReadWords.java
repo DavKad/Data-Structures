@@ -68,11 +68,13 @@ public class ReadWords {
      * @return  Polish word value.
      */
     public static String translatePOL(String word, List<ReadWords> list) {
-        for (ReadWords x : list) {
-            if (x.getENG().equals(word)) {
-                return x.getPOL();
+        Iterator<ReadWords> iter = list.iterator();
+            while(iter.hasNext()) {
+                ReadWords x = iter.next();
+                if (x.getENG().equals(word)) {
+                    return x.getPOL();
+                }
             }
-        }
         return "Word missing";
     }
      /**
@@ -82,7 +84,9 @@ public class ReadWords {
      * @return  English word value.
      */
     public static String translateENG(String word, List<ReadWords> list) {
-        for (ReadWords y : list) {
+        Iterator<ReadWords> iter = iter.iterator();
+        while(iter.hasNext()) {
+            ReadWords x = iter.next();
             if (y.getPOL().equals(word)) {
                 return y.getENG();
             }
@@ -96,7 +100,8 @@ public class ReadWords {
      * @return  Sentence when coudnt find a word.
      */
     public static String wordFinder(String word, List<ReadWords> list) {
-        for (ReadWords x : list) {
+        while(iter.hasNext()) {
+            ReadWords x = iter.next();
             if (x.getENG().equals(word) || x.getPOL().equals(word)) {
                 System.out.println("Word finded");
                 if (x.getENG().equals(word)) {
