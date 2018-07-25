@@ -11,13 +11,13 @@ public class BST<T extends Comparable>{
             Node parent = null;
             while(current != null){
                 parent = current;
-                if(current.value.compareTo(value) == 1){
+                if(current.value.compareTo(value) > 0){
                     current = current.right;
                 }else{
                     current = current.left;
                 }
             }
-            if(parent.value.compareTo(value) == 1){
+            if(parent.value.compareTo(value) > 0){
                 parent.right = new Node(value);
                 parent.right.parent = parent;
             }else{
@@ -32,7 +32,7 @@ public class BST<T extends Comparable>{
         while(current != null){
             if(current.value.equals(value)){
                 return true;
-            }else if(current.value.compareTo(value) == -1){
+            }else if(current.value.compareTo(value) < 0){
                 current = current.left;
             }else{
                 current = current.right;
