@@ -1,12 +1,12 @@
 package com.practice;
 
-public class Node {
+public class Node<T extends Comparable<T>>  {
     Node left;
     Node right;
     Node parent;
-    int value;
+    T value;
 
-    public Node(int value) {
+    public Node(T value) {
         this.value = value;
     }
 }

@@ -1,9 +1,9 @@
 package com.practice;
 
-public class BST<TYPE> {
+public class BST<T extends Comparable>{
     private Node root = null;
 
-    public void addValue(int value){
+    public void addValue(T value){
         if(root == null){
             root = new Node(value);
         }else{
@@ -11,13 +11,13 @@ public class BST<TYPE> {
             Node parent = null;
             while(current != null){
                 parent = current;
-                if(current.value > value){
+                if(current.value.compareTo(value) == 1){
                     current = current.right;
                 }else{
                     current = current.left;
                 }
             }
-            if(parent.value > value){
+            if(parent.value.compareTo(value) == 1){
                 parent.right = new Node(value);
                 parent.right.parent = parent;
             }else{
@@ -27,12 +27,12 @@ public class BST<TYPE> {
         }
     }
 
-    public boolean findValue(int value){
+    public boolean findValue(T value){
         Node current = root;
         while(current != null){
-            if(current.value == value){
+            if(current.value.equals(value)){
                 return true;
-            }else if(current.value < value){
+            }else if(current.value.compareTo(value) == -1){
                 current = current.left;
             }else{
                 current = current.right;
